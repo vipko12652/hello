@@ -1,0 +1,17 @@
+[Unit]
+Description=Hello app
+Requires=network.target
+After=network.target
+
+[Service]
+TimeoutStartSec=0
+RestartSec=0
+Restart=Always
+WorkingDirectory=/opt/hello
+KillSignal=SIGQUIT
+Type=notify
+NotifyAccess=all
+ExecStart=/usr/bin/uwsgi deploy/uwsgi/prod.ini
+
+[Install]
+MantedBy=multi-user.target
