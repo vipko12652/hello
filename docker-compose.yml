@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+   hello:
+      image: vipko12652/hello
+      ports:
+         - "80:80"
+      restart: always
